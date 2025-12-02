@@ -29,6 +29,6 @@ class Program
                 Console.Write(" ");
             }
         }
-        Console.Write("");
+        Console.Write("\n");
     }
 }
