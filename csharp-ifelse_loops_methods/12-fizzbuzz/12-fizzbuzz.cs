@@ -24,8 +24,11 @@ class Program
             {
                 Console.Write(i);
             }
-            Console.Write(" ");
+            if (i < 100)
+            {
+                Console.Write(" ");
+            }
         }
-        Console.WriteLine("");
+        Console.Write("");
     }
 }
