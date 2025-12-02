@@ -6,7 +6,7 @@ class Program
 	{
 		double percent = .7553;
 		double currency = 98765.4321;
-        Console.OutputEncoding = Encoding.UTF8;
-        Console.WriteLine($"Percent: {percent*100}% \nCurrency: ${currency.ToString("###,##0.00")}");
+        Console.WriteLine($"Percent: {percent.ToString("P")}");
+        Console.WriteLine($"Currency: ${currency.ToString("###,##0.00")}");
 	}
 }
