@@ -2,7 +2,7 @@
 
 class Number
 {
-    public static bool PrintLastDigit(int number)
+    public static int PrintLastDigit(int number)
     {
         return Math.Abs(number % 10);
     }
