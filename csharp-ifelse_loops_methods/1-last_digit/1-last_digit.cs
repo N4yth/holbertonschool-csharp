@@ -11,13 +11,13 @@ class Program
         {
             Console.WriteLine($"The last digit of {number} is {last_digit} and is greater than 5");
         }
-        else if (last_digit < 6)
+        else if (last_digit == 0)
         {
-            Console.WriteLine($"The last digit of {number} is {last_digit} and is less than 6 and not 0");
+            Console.WriteLine($"The last digit of {number} is {last_digit} and is 0");
         }
         else
         {
-            Console.WriteLine($"The last digit of {number} is {last_digit} and is 0");
+            Console.WriteLine($"The last digit of {number} is {last_digit} and is less than 6 and not 0");
         }
     }
 }
