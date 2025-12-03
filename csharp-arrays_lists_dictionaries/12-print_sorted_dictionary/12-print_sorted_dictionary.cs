@@ -5,12 +5,17 @@ class Dictionary
 {
     public static void PrintSorted(Dictionary<string, string> myDict)
     {
-        Dictionary<string, string> newDict = new Dictionary<string, string>();
-
-        newDict = myDict;
+        string[] tmparray = new string[myDict.Count];
+        int i = 0;
         foreach (KeyValuePair<string, string> Entry in myDict.OrderBy(x => x.Key))
         {
-            Console.WriteLine($"{Entry.Key}: {Entry.Value}");
+            tmparray[i] = Entry.Key;
+            i++;
+        }
+        Array.Sort(tmparray);
+        foreach (string item in tmparray)
+        {
+            Console.WriteLine($"{item}: {myDict[item]}");
         }
     }
 }
