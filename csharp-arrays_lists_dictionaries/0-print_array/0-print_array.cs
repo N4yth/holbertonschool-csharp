@@ -12,7 +12,7 @@ class Array
 
                 result[i] = i;
                 Console.Write(i);
-                if (i != size)
+                if (i != size - 1)
                 {
                     Console.Write(" ");
                 }
