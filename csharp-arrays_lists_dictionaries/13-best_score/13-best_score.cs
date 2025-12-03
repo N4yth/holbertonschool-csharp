@@ -10,7 +10,7 @@ class Dictionary
             return "None";
         }
         string winner = "";
-        int bscore = 0;
+        int bscore = -1;
         foreach (KeyValuePair<string, int> Entry in myList)
         {
             if (bscore < Entry.Value)
