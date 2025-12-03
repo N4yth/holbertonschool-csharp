@@ -7,7 +7,7 @@ class Dictionary
     {
         string[] tmparray = new string[myDict.Count];
         int i = 0;
-        foreach (KeyValuePair<string, string> Entry in myDict.OrderBy(x => x.Key))
+        foreach (KeyValuePair<string, string> Entry in myDict)
         {
             tmparray[i] = Entry.Key;
             i++;
