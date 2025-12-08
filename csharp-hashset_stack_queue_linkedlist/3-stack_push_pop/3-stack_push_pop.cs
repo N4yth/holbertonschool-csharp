@@ -16,14 +16,13 @@ class MyStack
             Console.WriteLine("Stack is empty");
         else
             Console.WriteLine($"Top item: {aStack.Peek()}");
+        Console.WriteLine($"Stack contains \"{search}\": {aStack.Contains(search)}");
         if (aStack.Contains(search))
         {
-            Console.WriteLine($"Stack contains \"{search}\": {aStack.Contains(search)}");
             while (remove != search)
             {
                 remove = aStack.Pop();
             }
-
         }
         aStack.Push(newItem);
         return aStack;
