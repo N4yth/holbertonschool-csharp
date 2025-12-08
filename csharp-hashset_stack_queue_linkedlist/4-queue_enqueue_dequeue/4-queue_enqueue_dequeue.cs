@@ -15,7 +15,7 @@ class MyQueue
         if (nbele == 0)
             Console.WriteLine("Queue is empty");
         else
-            Console.WriteLine($"First item: {aQueue.Dequeue()}");
+            Console.WriteLine($"First item: {aQueue.Peek()}");
         aQueue.Enqueue(newItem);
         Console.WriteLine($"Queue contains \"{search}\": {aQueue.Contains(search)}");
         if (aQueue.Contains(search))
