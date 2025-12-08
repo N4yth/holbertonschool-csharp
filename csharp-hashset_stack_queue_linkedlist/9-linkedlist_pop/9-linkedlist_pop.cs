@@ -7,10 +7,8 @@ class LList
     {
         if (myLList.Count == 0)
             return 0;
-        foreach (var item in myLList)
-        {
-            return item;
-        }
-        return 0;
+        int node = myLList.First.Value;
+        myLList.RemoveFirst();
+        return node;
     }
 }
