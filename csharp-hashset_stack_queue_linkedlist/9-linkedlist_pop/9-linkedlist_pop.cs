@@ -7,6 +7,10 @@ class LList
     {
         if (myLList.Count == 0)
             return 0;
-        return myLList.First.Value;
+        foreach (var item in myLList)
+        {
+            return item;
+        }
+        return 0;
     }
 }
