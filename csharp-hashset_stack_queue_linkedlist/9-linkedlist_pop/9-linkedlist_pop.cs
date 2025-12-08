@@ -7,6 +7,6 @@ class LList
     {
         if (myLList.Count == 0)
             return 0;
-        return myLList.First();
+        return myLList.First.Value;
     }
 }
