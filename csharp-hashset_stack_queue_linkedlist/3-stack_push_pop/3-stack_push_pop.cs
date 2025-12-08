@@ -6,9 +6,13 @@ class MyStack
     public static Stack<string> Info(Stack<string> aStack, string newItem, string search)
     {
         string remove = "";
-
-        Console.WriteLine($"Number of items: {aStack.Count()}");
-        if (aStack.Count() == 0)
+        int nbele = 0;
+        foreach (var item in aStack)
+        {
+            nbele++;
+        }
+        Console.WriteLine($"Number of items: {nbele}");
+        if (nbele == 0)
             Console.WriteLine("Stack is empty");
         else
             Console.WriteLine($"Top item: {aStack.Peek()}");
