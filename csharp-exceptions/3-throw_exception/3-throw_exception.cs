@@ -4,6 +4,6 @@ class Except
 {
     public static void Throw()
     {
-        throw new();
+        throw new Exception();
     }
 }
