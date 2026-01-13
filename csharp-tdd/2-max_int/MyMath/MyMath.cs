@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 
 namespace MyMath
 {
@@ -7,19 +8,18 @@ namespace MyMath
     {
         public static int Max(List<int> nums)
         {
-            if (nums.Count == 0)
+            int left = 0;
+            int right = input.Length - 1;
+            while (left < right)
             {
-                return 0;
-            }
-            int biggest = nums[0];
-            for (int i = 0 ; i < nums.Count ; i++)
-            {
-                if (nums[i] > biggest)
+                if (input[left] != input[right])
                 {
-                    biggest = nums[i];
+                    return false;
                 }
+                left++;
+                right--;
             }
-            return biggest;
+            return true;
         }
     }
 }
