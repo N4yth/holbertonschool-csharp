@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMath", "MyMath\MyMath.csproj", "{628FF9F4-1288-4B92-BC69-A1D6B732FC68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMath.Tests", "MyMath.Tests\MyMath.Tests.csproj", "{EF1770F2-6FED-48A3-8CA6-7FDD8290A081}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{628FF9F4-1288-4B92-BC69-A1D6B732FC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628FF9F4-1288-4B92-BC69-A1D6B732FC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628FF9F4-1288-4B92-BC69-A1D6B732FC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628FF9F4-1288-4B92-BC69-A1D6B732FC68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1770F2-6FED-48A3-8CA6-7FDD8290A081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1770F2-6FED-48A3-8CA6-7FDD8290A081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1770F2-6FED-48A3-8CA6-7FDD8290A081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1770F2-6FED-48A3-8CA6-7FDD8290A081}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
