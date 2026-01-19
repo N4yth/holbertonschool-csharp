@@ -5,7 +5,7 @@ class Obj
 {
     public static bool IsInstanceOfArray(object obj)
     {
-        if (obj.GetType().IsSubclassOf(Array) || obj.GetType() == Array)
+        if (obj is Array)
         {
             return true;
         }
