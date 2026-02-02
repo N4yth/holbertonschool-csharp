@@ -18,7 +18,8 @@ class VectorMath
         }
         else
         {
-            return -1;
+            double[] result = {-1};
+            return result;
         }
     }
 }
