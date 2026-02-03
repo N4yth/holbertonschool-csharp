@@ -7,7 +7,7 @@ class MatrixMath
     {
         if (matrix.Length == 4 || matrix.Length == 9)
         {
-            double[,] result = new double[matrix.Length, matrix.Length];
+            double[,] result = new double[matrix.GetLength(0), matrix.GetLength(0)];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
