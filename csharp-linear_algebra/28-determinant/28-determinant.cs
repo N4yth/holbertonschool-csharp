@@ -10,7 +10,7 @@ class MatrixMath
     {
         if (matrix.GetLength(1) != 2 || matrix.GetLength(1) != 3 && (matrix.GetLength(0) == matrix.GetLength(1)))
         {
-            return new double[,] {-1};
+            return new double[,] {{-1}};
         }
         double result;
         if (matrix.GetLength(1) == 2)
