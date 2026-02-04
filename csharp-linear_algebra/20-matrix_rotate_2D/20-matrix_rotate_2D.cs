@@ -11,10 +11,10 @@ class MatrixMath
         {
             return new double[,] { { -1 } };
         }
-        angle = -angle;
+        double rad = -(angle * Math.PI / 180.0);
         double[,] rotation = new double[,] {
-            {Math.Round(Math.Cos(angle)), Math.Round(-Math.Sin(angle))},
-            {Math.Round(Math.Sin(angle)),  Math.Round(Math.Cos(angle))}
+            {Math.Cos(rad), -Math.Sin(rad)},
+            {Math.Sin(rad),  Math.Cos(rad)}
         };
         double[,] result = new double[rows, cols];
         for (int i = 0; i < rows; i++)
