@@ -11,10 +11,9 @@ class MatrixMath
         {
             return new double[,] { { -1 } };
         }
-        double rad = -(angle * Math.PI / 180.0);
         double[,] rotation = new double[,] {
-            {Math.Cos(rad), -Math.Sin(rad)},
-            {Math.Sin(rad),  Math.Cos(rad)}
+            {Math.Cos(angle), -Math.Sin(angle)},
+            {Math.Sin(angle),  Math.Cos(angle)}
         };
         double[,] result = new double[rows, cols];
         for (int i = 0; i < rows; i++)
@@ -26,7 +25,7 @@ class MatrixMath
                 {
                     temp += matrix[i, k] * rotation[k, j];
                 }
-                result[i, j] = temp;
+                result[i, j] = Math.Round(temp, 2);
             }
         }
         return result;
