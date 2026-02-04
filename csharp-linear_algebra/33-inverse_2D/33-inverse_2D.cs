@@ -15,7 +15,7 @@ class MatrixMath
             return new double[,] { { -1 } };
         }
 
-        double[] result = new double [2, 2];
+        double[,] result = new double [2, 2];
 
         result[0, 0] = det/matrix[0, 0];
         result[1, 0] = det/matrix[1, 0];
