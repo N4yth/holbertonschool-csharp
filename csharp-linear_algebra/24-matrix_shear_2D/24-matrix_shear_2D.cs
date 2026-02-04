@@ -10,9 +10,9 @@ class MatrixMath
         {
             return new double[,] { { -1 } };
         }
-        double[,] result = new double[matrix.GetLength(1), matrix.GetLength(0)];
+        double[,] result = matrix.Clone() as double[,];
 
-        if (direction == 'y')
+        if (direction == 'x')
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
