@@ -8,8 +8,7 @@ class MatrixMath
     {
         if (vector1.Count() != 3 || vector2.Count() != 3)
         {
-            double[] result = {{-1}};
-            return result;
+            return new double[]{-1};
         }
         return new double[] {{
             vector1[2]*vector2[3] - vector1[3]*vector2[2],
