@@ -11,10 +11,10 @@ class MatrixMath
         {
             return new double[,] { { -1 } };
         }
-        double angle = angleDegrees * Math.PI / 180.0;
+        double Tangle = angle * Math.PI / 180.0;
         double[,] rotation = new double[,] {
-            { Math.Cos(angle), -Math.Sin(angle) },
-            { Math.Sin(angle),  Math.Cos(angle) }
+            { Math.Cos(Tangle), -Math.Sin(Tangle) },
+            { Math.Sin(Tangle),  Math.Cos(Tangle) }
         };
         double[,] result = new double[2, cols];
         for (int i = 0; i < cols; i++)
