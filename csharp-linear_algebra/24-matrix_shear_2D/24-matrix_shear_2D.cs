@@ -16,14 +16,14 @@ class MatrixMath
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                result[i, 0] = matrix[i, 0] + matrix[0, i] * factor;
+                result[i, 0] = matrix[i, 0] + matrix[0, 1] * factor;
             }
         }
         else
         {
             for (int i = 0; i < matrix.GetLength(1); i++)
             {
-                result[0, i] = matrix[0, i] + matrix[i, 0] * factor;
+                result[0, i] = matrix[0, i] + matrix[1, 0] * factor;
             }
         }
         return result;
