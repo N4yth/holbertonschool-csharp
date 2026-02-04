@@ -11,6 +11,7 @@ class MatrixMath
         {
             return new double[,] { { -1 } };
         }
+        angle = -angle;
         double[,] rotation = new double[,] {
             {Math.Round(Math.Cos(angle)), Math.Round(-Math.Sin(angle))},
             {Math.Round(Math.Sin(angle)),  Math.Round(Math.Cos(angle))}
