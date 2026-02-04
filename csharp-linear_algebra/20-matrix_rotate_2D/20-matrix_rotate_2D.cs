@@ -17,7 +17,7 @@ class MatrixMath
             {Math.Cos(angle), -Math.Sin(angle)},
             {Math.Sin(angle),  Math.Cos(angle)}
         };
-        double Rcol = rotation.GetLength(1);
+        int Rcol = rotation.GetLength(1);
         double[,] result = new double[rows, Rcol];
         for (int i = 0; i < rows; i++)
         {
