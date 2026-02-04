@@ -7,7 +7,7 @@ class MatrixMath
     {
         int row = matrix.GetLength(0);
         int col = matrix.GetLength(1);
-        double[,] rotation = new double[,] {{0, -1}, {1, 0}};
+        double[,] rotation = new double[,] {{Math.Cos(angle), -Math.Sin(angle)}, {Math.Sin(angle), Math.Cos(angle)}};
         int Rcol = rotation.GetLength(1);
         if (row != 2)
         {
