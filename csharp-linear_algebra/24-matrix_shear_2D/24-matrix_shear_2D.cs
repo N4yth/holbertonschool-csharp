@@ -6,13 +6,13 @@ class MatrixMath
 {
     public static double[,] Shear2D(double[,] matrix, char direction, double factor)
     {
-        if (direction != "y" || direction != "x" || matrix.GetLength(1) == matrix.GetLength(0))
+        if (direction != 'y' || direction != 'x' || matrix.GetLength(1) == matrix.GetLength(0))
         {
             return new double[,] { { -1 } };
         }
-        double[,] result = new double[rows, Rcol];
+        double[,] result = new double[matrix.GetLength(1), matrix.GetLength(0)];
 
-        if (direction == "y")
+        if (direction == 'y')
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
