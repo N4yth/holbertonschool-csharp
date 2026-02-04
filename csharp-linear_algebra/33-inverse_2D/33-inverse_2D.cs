@@ -17,10 +17,10 @@ class MatrixMath
 
         double[,] result = new double [2, 2];
 
-        result[0,0] =  matrix[1,1] / det;
-        result[0,1] = -matrix[0,1] / det;
-        result[1,0] = -matrix[1,0] / det;
-        result[1,1] =  matrix[0,0] / det;
+        result[0,0] = Math.Round(matrix[1,1] / det, 2);
+        result[0,1] = Math.Round(-matrix[0,1] / det, 2);
+        result[1,0] = Math.Round(-matrix[1,0] / det, 2);
+        result[1,1] = Math.Round(matrix[0,0] / det, 2);
 
         return result;
     }
