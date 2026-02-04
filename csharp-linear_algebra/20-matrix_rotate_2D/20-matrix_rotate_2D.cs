@@ -15,19 +15,19 @@ class MatrixMath
             {Math.Round(Math.Cos(angle)), Math.Round(-Math.Sin(angle))},
             {Math.Round(Math.Sin(angle)),  Math.Round(Math.Cos(angle))}
         };
-        double[,] result = new double[rows, col2];
-            for (int i = 0; i < rows; i++)
+        double[,] result = new double[rows, cols];
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < rotation.GetLength(1); j++)
             {
-                for (int j = 0; j < rotation.GetLength(1); j++)
+                double temp = 0;
+                for (int k = 0; k < cols; k++)
                 {
-                    double temp = 0;
-                    for (int k = 0; k < cols; k++)
-                    {
-                        temp += matrix1[i, k] * matrix2[k, j];
-                    }
-                    result[i, j] = temp;
+                    temp += matrix[i, k] * rotation[k, j];
                 }
+                result[i, j] = temp;
             }
-            return result;
+        }
+        return result;
     }
 }
