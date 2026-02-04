@@ -12,7 +12,7 @@ class MatrixMath
 
         if (col1 != row2)
         {
-            ouble[,] result = {{-1}};
+            double[,] result = {{-1}};
             return result;
         }
         else
@@ -25,7 +25,7 @@ class MatrixMath
                     double temp = 0;
                     for (int k = 0; k < col1; k++)
                     {
-                        temp += A[i, k] * B[k, j];
+                        temp += matrix1[i, k] * matrix2[k, j];
                     }
                     result[i, j] = temp;
                 }
