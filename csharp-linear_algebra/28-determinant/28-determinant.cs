@@ -4,7 +4,7 @@ using System.Security.AccessControl;
 using System.Threading.Tasks.Dataflow;
 using System.Xml.XPath;
 
-class MatrixMath
+class VectorMath
 {
     public static double Determinant(double[,] matrix)
     {
