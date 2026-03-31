@@ -32,4 +32,8 @@ class TestObject : Base, ICollectable, IBreakable, IInteractive
 {
     public bool isCollected { get; set; }
     public int durability { get; set; }
+
+    public void Collect(){}
+    public void Interact(){}
+    public void Break(){}
 }
