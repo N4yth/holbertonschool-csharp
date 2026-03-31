@@ -44,8 +44,9 @@ class Door : Base, IInteractive
 class Decoration : Base, IInteractive, IBreakable
 {
     public bool isQuestItem;
+    public int durability { get; set; }
 
-    public Door (string name = "Door", int durability = 1,  bool isQuestItem = false)
+    public Decoration (string name = "Decoration", int durability = 1,  bool isQuestItem = false)
     {
         if (durability <= 0)
         {
@@ -74,6 +75,7 @@ class Decoration : Base, IInteractive, IBreakable
 
     public void Break()
     {
+        this.durability -= 1;
         if (this.durability > 0)
         {
             Console.WriteLine("You hit the " + this.name + ". It cracks.");
@@ -85,7 +87,6 @@ class Decoration : Base, IInteractive, IBreakable
         else
         {
             Console.WriteLine("The " + this.name + " is already broken.");
-        }
-        this.durability = this.durability -1;
+        } 
     }
 }
