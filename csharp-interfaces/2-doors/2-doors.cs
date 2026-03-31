@@ -2,7 +2,7 @@
 
 abstract class Base 
 {
-    public string name { get; set; }
+    string name { get; set; }
 
     public override string ToString()
     {
@@ -12,20 +12,20 @@ abstract class Base
 
 interface IInteractive
 {
-    public void Interact();
+    void Interact();
 }
 
 interface ICollectable
 {
-    public bool isCollected { get; set; }
+    bool isCollected { get; set; }
 
-    public void Collect();
+    void Collect();
 }
 
 interface IBreakable
 {
-    public int durability { get; set; }
-    public void Break();
+    int durability { get; set; }
+    void Break();
 }
 
 class Door : Base, IInteractive
