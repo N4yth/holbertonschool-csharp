@@ -2,7 +2,7 @@
 
 abstract class Base 
 {
-    public string name = "";
+    string name { get; set; }
 
     public override string ToString()
     {
