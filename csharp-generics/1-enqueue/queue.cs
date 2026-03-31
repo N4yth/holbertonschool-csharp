@@ -15,8 +15,8 @@ class Queue<T>
 
     public class Node
     {
-        object value = null;
-        Node next = null;
+        public object value = null;
+        public Node next = null;
 
         public Node(Node value)
         {
@@ -28,15 +28,15 @@ class Queue<T>
     }
     public void Enqueue(Node value)
     {
-        if (next == null)
+        if (head == null)
         {
-            next = value;
+            head.next = value;
             tail = value;
             count ++;
         }
         else
         {
-            Node tmp = next;
+            Node tmp = head.next;
             while (tmp.next != null)
             {
                 tmp = tmp.next;
