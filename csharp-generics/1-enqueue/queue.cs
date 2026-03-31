@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Globalization;
-using Microsoft.VisualBasic;
 
 class Queue<T>
 {
@@ -18,33 +16,26 @@ class Queue<T>
         public object value = null;
         public Node next = null;
 
-        public Node(Node value)
+        public Node(T value)
         {
-            count = 0;
-            next = value;
-            head = value;
-            tail = value;
+            this.value = value;
+            this.next = null;
         }
     }
-    public void Enqueue(Node value)
+    public void Enqueue(T value)
     {
+        Node newNode = new Node(value);
         if (head == null)
         {
-            head.next = value;
-            tail = value;
-            count ++;
+            head = newNode;
+            tail = newNode;
         }
         else
         {
-            Node tmp = head.next;
-            while (tmp.next != null)
-            {
-                tmp = tmp.next;
-            }
-            tmp.value = value;
-            tail = value;
-            count++;
+            tail.next = newNode;
+            tail = newNode;
         }
+        count++;
     }
 
     public int Count()
