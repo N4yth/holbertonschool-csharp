@@ -8,6 +8,7 @@ public class Player
 
     public Player(string name = "Player", float maxHp = 100f)
     {
+        this.name = name;
         if (maxHp <= 0)
         {
             this.maxHp = 100f;
