@@ -10,6 +10,7 @@ public delegate float CalculateModifier(float baseValue, Modifier modifier);
 
 public class Player
 {
+    private bool warningTriggered = false;
     private string name;
     private float maxHp;
     private float hp;
@@ -29,8 +30,7 @@ public class Player
         }
         this.hp = this.maxHp;
         this.status = "" + name + " is ready to go!";
-        HPCheck += CheckStatus;
-        HPCheck += HPValueWarning;
+        HPCheck += CheckStatus; 
     }
 
     public delegate void CalculateHealth(float amount);
@@ -117,7 +117,6 @@ public class Player
 
     private void HPValueWarning(object sender, CurrentHPArgs e)
     {
-        
         if (e.currentHp == 0)
         {
             var ClassiColor = Console.BackgroundColor;
@@ -126,7 +125,7 @@ public class Player
             Console.BackgroundColor = ClassiColor;
             Console.Write("\n");
         }
-        else
+        else if (e.currentHp <= this.maxHp / 4)
         {
             var ClassiColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -138,11 +137,12 @@ public class Player
 
     public void OnCheckStatus(CurrentHPArgs e)
     {
-        if (e.currentHp <= this.maxHp / 4)
+        if (e.currentHp <= this.maxHp / 4 && this.warningTriggered == false)
         {
-            
-            HPCheck?.Invoke(this, e);
+            HPCheck += HPValueWarning;
+            this.warningTriggered = true;
         }
+        HPCheck?.Invoke(this, e);
     }
 }
 
