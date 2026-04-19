@@ -21,13 +21,11 @@ namespace InventoryManagement.Tests
 
             storage.New(obj);
 
-            var all = storage.All();
-
-            Assert.Contains("Dummy.1", all.Keys);
+            Assert.Contains("Dummy.1", storage.All().Keys);
         }
 
         [Fact]
-        public void New_NullObject_DoesNotCrash()
+        public void New_NullObject_DoesNotThrow()
         {
             var storage = new JSONStorage();
 
@@ -37,7 +35,7 @@ namespace InventoryManagement.Tests
         }
 
         [Fact]
-        public void All_ReturnsDictionary()
+        public void All_ReturnsNonNullDictionary()
         {
             var storage = new JSONStorage();
 
@@ -52,9 +50,7 @@ namespace InventoryManagement.Tests
             storage.New(new Dummy { Id = "1", Name = "A" });
             storage.New(new Dummy { Id = "2", Name = "B" });
 
-            var all = storage.All();
-
-            Assert.Equal(2, all.Count);
+            Assert.Equal(2, storage.All().Count);
         }
 
         [Fact]
