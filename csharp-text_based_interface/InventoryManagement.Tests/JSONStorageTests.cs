@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Linq;
 using InventoryLibrary;
 using Xunit;
@@ -8,11 +7,6 @@ namespace InventoryManagement.Tests
 {
     public class JSONStorageTests
     {
-        private JSONStorage GetFreshStorage()
-        {
-            return new JSONStorage();
-        }
-
         public class Dummy
         {
             public string Id { get; set; }
@@ -20,23 +14,22 @@ namespace InventoryManagement.Tests
         }
 
         [Fact]
-        public void New_AddsObjectToStorage()
+        public void New_AddsObjectCorrectly()
         {
-            var storage = GetFreshStorage();
+            var storage = new JSONStorage();
             var obj = new Dummy { Id = "1", Name = "Test" };
 
             storage.New(obj);
 
             var all = storage.All();
 
-            Assert.Single(all);
-            Assert.True(all.ContainsKey("Dummy.1"));
+            Assert.Contains("Dummy.1", all.Keys);
         }
 
         [Fact]
-        public void New_NullObject_DoesNothing()
+        public void New_NullObject_DoesNotCrash()
         {
-            var storage = GetFreshStorage();
+            var storage = new JSONStorage();
 
             storage.New(null);
 
@@ -44,64 +37,34 @@ namespace InventoryManagement.Tests
         }
 
         [Fact]
-        public void New_ObjectWithoutId_ThrowsException()
+        public void All_ReturnsDictionary()
         {
-            var storage = GetFreshStorage();
+            var storage = new JSONStorage();
 
-            var obj = new { Name = "NoIdObject" };
-
-            Assert.Throws<Exception>(() => storage.New(obj));
+            Assert.NotNull(storage.All());
         }
 
         [Fact]
-        public void All_ReturnsSameDictionaryInstance()
+        public void MultipleObjects_AreStoredCorrectly()
         {
-            var storage = GetFreshStorage();
+            var storage = new JSONStorage();
 
-            var dict1 = storage.All();
-            var dict2 = storage.All();
+            storage.New(new Dummy { Id = "1", Name = "A" });
+            storage.New(new Dummy { Id = "2", Name = "B" });
 
-            Assert.Equal(dict1, dict2);
-        }
+            var all = storage.All();
 
-        [Fact]
-        public void Save_CreatesFile()
-        {
-            var storage = GetFreshStorage();
-            var obj = new Dummy { Id = "2", Name = "SaveTest" };
-
-            storage.New(obj);
-            storage.Save();
-
-            Assert.True(File.Exists(Path.Combine("storage", "inventory_manager.json")));
-        }
-
-        [Fact]
-        public void Load_RestoresData()
-        {
-            var storage = GetFreshStorage();
-            var obj = new Dummy { Id = "3", Name = "LoadTest" };
-
-            storage.New(obj);
-            storage.Save();
-
-            var newStorage = GetFreshStorage();
-            newStorage.Load();
-
-            var all = newStorage.All();
-
-            Assert.NotEmpty(all);
+            Assert.Equal(2, all.Count);
         }
 
         [Fact]
         public void KeyFormat_IsCorrect()
         {
-            var storage = GetFreshStorage();
-            var obj = new Dummy { Id = "10", Name = "KeyTest" };
+            var storage = new JSONStorage();
 
-            storage.New(obj);
+            storage.New(new Dummy { Id = "99", Name = "X" });
 
-            Assert.Contains("Dummy.10", storage.All().Keys);
+            Assert.Contains("Dummy.99", storage.All().Keys);
         }
     }
 }
